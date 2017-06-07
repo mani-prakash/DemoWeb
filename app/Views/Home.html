@@ -1,0 +1,39 @@
+<header>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">Toggle search</button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#links">Toggle links</button> <a class="navbar-brand" href="#">EDS</a>
+
+            </div>
+            <ul class="collapse navbar-collapse nav navbar-nav" id="links">
+                <li [className]="menuClass[1]" (click)="setMenuSelection(1)"><a href="#">Business Analysit</a></li>
+                <li (click)="setMenuSelection(2)" [className]="menuClass[2]" ><a href="#">Business Inteligence</a></li>
+                <li (click)="setMenuSelection(3)" [className]="menuClass[3]" ><a href="#">Business Operations</a></li>
+                <li (click)="setMenuSelection(4)" [className]="menuClass[4]" ><a href="#">Business To Business</a></li>
+            </ul>
+
+        </div>
+    </nav>
+    <div *ngIf="menu != 3" class="row">
+        <div class="col-lg-12 text-center danger"> Work Under Progress </div>
+    </div>
+    <div *ngIf="menu == 3">
+        <nav  class="navbar navbar-default nav2" role="navigation">
+            <ul class="collapse navbar-collapse nav navbar-nav" id="links">
+                <li (click)="setSubMenu(3,1)" [className]="(submenu[3][1])?'active':''" ><a href="#">Home</a></li>
+                <li (click)="setSubMenu(3,2)" [className]="(submenu[3][2])?'active':''" ><a href="#">Econ</a></li>
+                <li (click)="setSubMenu(3,3)" [className]="(submenu[3][3])?'active':''" ><a href="#">Inbound</a></li>
+                <li (click)="setSubMenu(3,4)" [className]="(submenu[3][4])?'active':''" ><a href="#">OutBound</a></li>
+                <li (click)="setSubMenu(3,5)" [className]="(submenu[3][5])?'active':''" ><a href="#">Inventory</a></li>
+                <li (click)="setSubMenu(3,6)" [className]="(submenu[3][6])?'active':''" ><a href="#">Vas</a></li>
+                <li (click)="setSubMenu(3,7)" [className]="(submenu[3][7])?'active':''" ><a href="#">Billing</a></li>
+                <li (click)="setSubMenu(3,8)" [className]="(submenu[3][8])?'active':''" ><a href="#">Utility</a></li>
+            </ul>
+        </nav>
+        <inventory *ngIf="submenu[3][5]"></inventory>
+        <div *ngIf!="submenu[3][5]" class="row">
+            <div class="col-lg-12 text-center danger"> Work Under Progress </div>
+        </div>
+    </div>
+</header>

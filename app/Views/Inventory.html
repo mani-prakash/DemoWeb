@@ -1,0 +1,46 @@
+<div class="container-fluid" style="width: 100%;">
+    <div class="row">
+    <form class="pure-form pure-form-aligned">
+        <fieldset>
+            <div class="pure-control-group">
+                <label >ID</label>
+                <input type="text" [(ngModel)]="id" placeholder="Username">
+                <!--span class="pure-form-message-inline">This is a required field.</span-->
+            </div>
+
+            <div class="pure-control-group">
+                <label >Recieved Date</label>
+                <input  type="date" [(ngModel)]="recievedDate">
+            </div>
+
+            <div class="pure-control-group">
+                <label>Delivery Date</label>
+                <input type="date" [(ngModel)]="deliveryDate">
+            </div>
+
+            <div class="pure-control-group">
+                <label>Status</label>
+                <input type="text" [(ngModel)]="status" placeholder="Status">
+            </div>
+
+            <div class="pure-controls">
+                <button (click)="addItem()" class="pure-button pure-button-primary">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+    <table class="row table table-hover table-responsive">
+        <tr class="danger">
+            <th> ID </th>
+            <th> RecievedDate </th>
+            <th> STATUS </th>
+            <th> DeliveryDate </th>
+        </tr>
+        <tr *ngFor="#item of items">
+            <td> {{ item.id }}</td>
+            <td> {{ item.recievedDate }}</td>
+            <td> {{ item.status }}</td>
+            <td> {{ item.deliveryDate }}</td>
+        </tr>
+    </table>
+</div>
