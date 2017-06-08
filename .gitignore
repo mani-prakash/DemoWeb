@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+### webapp template
+app.js
+bower_components
+images
+.idea
+*/workspace.xml
